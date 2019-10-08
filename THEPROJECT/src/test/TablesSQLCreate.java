@@ -52,25 +52,5 @@ public class TablesSQLCreate {
 	}
 }
 	
-	/*public static void UsersTable() throws SQLException, InstantiationException, IllegalAccessException, ClassNotFoundException {
-		Class.forName("com.mysql.jdbc.Driver").newInstance();
-    	Connection connection = bd.DataBase.getMySQLConnection();
-		String requete = String.format("%s%s%s%s%s%s%s%s%s%s",
-        		"CREATE TABLE user(",
-        		"id int(11) PRIMARY KEY AUTO_INCREMENT,",//ou Integer
-        		"login Varchar(32) UNIQUE NOT NULL,",
-        		"password blob NOT NULL,",
-        		"prenom Varchar(255) NOT NULL,",
-        		"nom Varchar(255) NOT NULL,",
-        		"mail Varchar(225) UNIQUE",
-        		"age int(11) NOT NULL",
-        		"sexe varchar(32) NOT NULL",
-        		");");
-        PreparedStatement st = connection.prepareStatement(requete);
-        st.executeUpdate();
-        st.close();
-        connection.close();
-	}*/
-	
 	
 
