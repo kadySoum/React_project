@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd"> 
+<web-app> 
+
+	<display-name>TestTomcat</display-name> 
+	<servlet> 
+		<servlet-name>CreateUser</servlet-name> 
+		<servlet-class>servlets.user.ServletCreateUser</servlet-class> 
+	</servlet>
+	<servlet> 
+		<servlet-name>Login</servlet-name> 
+		<servlet-class>servlets.user.ServletLogin</servlet-class> 
+	</servlet> 
+	<servlet> 
+		<servlet-name>Logout</servlet-name> 
+		<servlet-class>servlets.user.ServletLogout</servlet-class> 
+	</servlet>
+	<servlet> 
+		<servlet-name>UserId</servlet-name> 
+		<servlet-class>servlets.user.ServletUserId</servlet-class> 
+	</servlet>
+	<servlet> 
+		<servlet-name>UserCle</servlet-name> 
+		<servlet-class>servlets.user.ServletUserCle</servlet-class> 
+	</servlet>
+	
+	<!-- friends servlet-->
+	<servlet> 
+		<servlet-name>AddFriend</servlet-name> 
+		<servlet-class>servlets.friend.ServletAddFriend</servlet-class> 
+	</servlet>
+	<servlet> 
+		<servlet-name>RemoveFriend</servlet-name> 
+		<servlet-class>servlets.friend.ServletRemoveFriend</servlet-class> 
+	</servlet>
+	<servlet> 
+		<servlet-name>ListFriend</servlet-name> 
+		<servlet-class>servlets.friend.ServletListFriend</servlet-class> 
+	</servlet>
+	<servlet> 
+		<servlet-name>ListSuggestions</servlet-name> 
+		<servlet-class>servlets.friend.ServletListSuggestions</servlet-class> 
+	</servlet>
+	
+	<!-- comment/message servlet-->
+	<servlet> 
+		<servlet-name>AddComment</servlet-name> 
+		<servlet-class>servlets.message.ServletAddComment</servlet-class> 
+	</servlet>
+	<servlet> 
+		<servlet-name>SearchMessage</servlet-name> 
+		<servlet-class>servlets.message.ServletSearchMessage</servlet-class> 
+	</servlet>
+	<servlet> 
+		<servlet-name>MyComment</servlet-name> 
+		<servlet-class>servlets.message.ServletMyComment</servlet-class> 
+	</servlet>
+	
+	<!-- user mapping -->
+	<servlet-mapping> 
+		<servlet-name>CreateUser</servlet-name> 
+		<url-pattern>/CreateUser</url-pattern> 
+	</servlet-mapping>
+	<servlet-mapping> 
+		<servlet-name>Login</servlet-name> 
+		<url-pattern>/Login</url-pattern> 
+	</servlet-mapping> 
+	<servlet-mapping> 
+		<servlet-name>Logout</servlet-name> 
+		<url-pattern>/Logout</url-pattern> 
+	</servlet-mapping> 
+	<servlet-mapping> 
+		<servlet-name>UserId</servlet-name> 
+		<url-pattern>/UserId</url-pattern> 
+	</servlet-mapping>
+	<servlet-mapping> 
+		<servlet-name>UserCle</servlet-name> 
+		<url-pattern>/UserCle</url-pattern> 
+	</servlet-mapping>
+	
+	<!-- friends mapping -->
+	<servlet-mapping> 
+		<servlet-name>AddFriend</servlet-name> 
+		<url-pattern>/AddFriend</url-pattern> 
+	</servlet-mapping>
+	
+		<servlet-mapping> 
+		<servlet-name>RemoveFriend</servlet-name> 
+		<url-pattern>/RemoveFriend</url-pattern> 
+	</servlet-mapping>
+	<servlet-mapping> 
+		<servlet-name>ListFriend</servlet-name> 
+		<url-pattern>/ListFriend</url-pattern> 
+	</servlet-mapping>
+	<servlet-mapping> 
+		<servlet-name>ListSuggestions</servlet-name> 
+		<url-pattern>/ListSuggestions</url-pattern> 
+	</servlet-mapping>
+	
+	<!-- comment/message mapping -->
+	<servlet-mapping> 
+		<servlet-name>AddComment</servlet-name> 
+		<url-pattern>/AddComment</url-pattern> 
+	</servlet-mapping>
+	<servlet-mapping> 
+		<servlet-name>SearchMessage</servlet-name> 
+		<url-pattern>/SearchMessage</url-pattern> 
+	</servlet-mapping>
+	<servlet-mapping> 
+		<servlet-name>MyComment</servlet-name> 
+		<url-pattern>/MyComment</url-pattern> 
+	</servlet-mapping>
+	<filter>
+		<filter-name>CorsFilter</filter-name>
+		<filter-class>CORSFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CorsFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+</web-app>
