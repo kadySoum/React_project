@@ -1,0 +1,361 @@
+/**
+ctl-f
+HEADER
+FOOTER
+STAT pour le css des statistiques
+TOUS LES BOUTONS
+MUR
+INPUT
+PHOTO DE PROFIL
+CENTRE
+BACKGROUND
+*/
+/*********************HEADER************************************/
+body{
+	scroll-behavior: auto;	
+	scroll:auto;
+	
+}
+header{
+  /* background-color: green;/*rgba(0, 100, 10);*/ 
+	width: 100%;
+	position: relative;
+	margin-bottom: 50px;
+	display: inline-flex;
+	border-radius: 1px;
+	box-shadow: 1px 1px 3px;
+}
+.container{
+	background-color:green;/*#105615;*/
+	width: 100%;
+	position: relative;
+	margin-bottom: 50px;
+	display: inline-flex;
+	border-radius: 1px;
+	box-shadow: 1px 1px 3px;
+}
+
+#logo{
+  /*display: inline-block;*/
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+#profil{
+  width: 50px;
+  height: 50px;
+}
+
+div#recherche{
+	float: right;
+	transform: translate(-50%, -50%);
+	position: relative;
+	/* left:60%; */
+	top:50%;
+	width:35em;
+	margin-top:20px;
+	margin-left:50%;
+}
+
+input#recherche{
+  width: 30%;
+  
+}
+a{
+   color: black;
+   padding-right: 10px;/*espace entre les elements*/
+   text-decoration:none;/*enlever le soulignement*/
+   font-size:18px;
+}
+div[id=jiraya]{
+	float: right;
+	transform: translate(-20%, -50%);
+	position: absolute;
+	right: 0%;
+	top:50%;
+ } */
+
+ 
+.titre{
+	font-size: 150%;
+}
+.topbar {
+ /* background-image: url(""); */
+ background-color: green;
+ background-size: 100% 100%;
+ border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+ height: 46px;
+ position: relative;
+ width: 100%;
+ text-align:center;
+}
+.accueil{
+	margin-right: 90%
+}
+/*********************BACKGROUND*******************************/
+
+
+.ALL{
+	font-family:Arial;
+	background-color: #e2ffe3;	
+	left: 0;
+	min-height: 100%;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: -999;
+}
+/*
+.mur{
+	background-color: red;
+}
+.profil{
+	background-color: blue;
+}
+.centreProfil{
+	background-color: black;
+}*/
+
+/*********************INPUT************************************/
+
+input[type=text], input[type=password], input[type=date],  input[type=email], input[type=number]{
+    border-radius: 5px;
+	border-width: 1px;   /* Epaisseur de la bordure  */
+	border-color: #dddddd;   /* Couleur de la bordure  */
+	padding: 0px 3px 9px 5px; 
+	 width: 50%;
+}
+
+#ameliorer{
+	width: 40%;
+	height: 50px;
+	transition: initial;
+	margin-right: 5px;
+}
+
+textarea[type=text]{
+    border-radius: 3px;
+    box-shadow:1px 1px 1px;
+}
+textarea{
+  text-align: center;
+}
+
+div#corps{
+  display: inline-flex;
+  font-family:Arial;
+  font-size: medium;
+}
+
+.txt{
+  text-align: center;
+  margin-right: 50px;
+}
+
+#jiraya{
+  width:50px ;
+  height:50px;
+}
+.listeMessages{
+  font-family:Arial;
+  font-size: medium;
+}
+
+#icone_profil{
+  width:50px ;
+  height:50px;
+  /* margin-right: 400px; */
+  position : relative;
+}
+
+.menu{
+  position: absolute;
+  left: 50px;
+  width: 200px;
+  font-size: medium;
+  }
+
+/*********************FOOTER***********************************/
+ 
+ footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  background-color:green;
+  width: 100%;
+  font-size: medium;
+  text-align: center;
+  
+ }
+ 
+ /*********************STAT************************************/
+.liste{
+ margin:0;
+ padding:0;
+}
+ 
+.item{
+ width:1%;
+ vertical-align:bottom;
+ display:table-cell;
+ /* text-align:inherit; */
+}
+ 
+.nom_stats{
+ color:green;
+ font-size:15px;
+ font-weight:bold;
+ line-height:30px;
+}
+ 
+.nb_stats{
+ display:block;
+ font-size:18px;
+ padding-top:5px;
+}
+/*************************************************************/
+
+
+ /***************TOUS LES BOUTONS**************************/
+.tweet{
+ background-color:green;
+ padding: 5px 15px;/* epaisseur et longueur*/
+ border-radius: 50px; /*bord du boutton arrondis*/
+ border: 1px solid green; /*bord du boutton effet, couleur*/
+ color: rgb(255, 255, 255);/*couleur de l'écriture dans le bouton*/
+ line-height: 20px; /*epaisseur du bouton*/
+ font-size: 14px;
+ float: right; 
+
+}
+
+input[type=submit],button[type=submit] {
+ background-color: green;
+ border: 0px; 
+ border-radius: 50px;
+ color: white;
+ font-size: 20px;
+ height: auto;
+ padding: 12px 20px;
+ position: relative;
+ text-align: center;
+ width: 200px;
+}
+ /*************************MUR*******************************/
+ 
+.mur{
+ width: 900px;
+ overflow: hidden;
+ margin:auto;
+}
+ 
+ /******************PHOTO DE PROFIL******************************/
+ 
+.profil{
+ width: 290px;
+ position: relative;
+}
+
+.couverture{
+ background-color:green;
+ height:80px;
+}
+
+.image{ /*placement image à côté du nom*/
+ margin:-40px 0 0 10px;
+ display:inline-block;
+ border-radius:50%;
+}
+
+ /***********************CENTRE**********************************/
+ 
+.centre{
+ width:580px;
+ float:right; 
+ margin-top:0%;
+ margin-right:10px;
+}
+/* .centreProfil{ */
+  /* margin-top:-150px; */
+/* } */
+ 
+.publier{
+ background:yellow;
+ padding:15px 15px;
+ position:relative;/*position icone photo de profil*/
+
+ }
+ 
+.profil_icone_tweet{
+ width:40px;
+ height:40px;
+ position:absolute; /*pour aligner zone text et img*/
+ left:20px; 
+ border-radius:50%;
+}
+.placement_img{
+ margin-left:56px;
+}
+
+.image img{/*à côté de la zone de text*/
+ width:72px;
+ height:72px;
+ border-radius:50%;
+ box-sizing:border-box;
+ border:2px solid #FFF;
+}
+
+.nb_caractere{
+ overflow: hidden;
+ margin-top: 10px;
+ margin-left: 420px;
+}
+ 
+.bouton_tweet{
+ overflow: hidden;
+ margin-top: 10px;
+}
+
+ 
+.zone_de_texte{
+ border-width: 0px 0px 0px;
+ padding: 8px;
+ border-radius: 5px;
+ width: 100%;
+ height: 50px;
+ font-family: Arial,sans-serif;
+ box-sizing: border-box;
+ background-color: rgb(255, 255, 255);
+}
+
+/* .ppage{ */
+	 /* margin-left:-10%; */
+	/* position:relative; */
+	/* font-size:15px */
+/* } */
+.publication{
+	margin-left:300px;
+}
+ /********************FORMULAIRE********************************/
+  
+ 
+.toto{
+	 margin : 0 auto;
+	margin-top : 5%;
+  width: 400px;
+  text-align: center;
+}
+div#enregistrement{
+	text-align:center;
+}
+
+label {
+position:relative;
+  display: inline-block;/*pour aligner les étiquettes*/
+  width: 150px;
+  text-align: right;
+  float: left;
+  
+}
+ 

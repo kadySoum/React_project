@@ -1,0 +1,133 @@
+utilisateur peut modifier la couleur du backgroung
+
+//dans le terminal
+$mongo
+db.color.insert({"color":["bleu","jaune","vert","orange","noir","rose","vert"]})
+
+//dans fichier mongoTools
+public static List<Document> color() {
+		List<Document> res = new ArrayList<Document>();
+		MongoClient mongo = new MongoClient();
+		
+			MongoDatabase db = mongo.getDatabase("ly_soumahoro_mongo");
+			MongoCollection<Document> coll = db.getCollection("color");
+			Document searchQuery = new Document();
+			
+			Iterable<Document> docs = coll.find().projection(Projections.exclude("_id"));;
+			for (Document doc : docs) {
+				res.add(doc);
+			}
+			System.out.println(res);
+		return res;
+	}
+	
+//un servlet pour retourner la liste des couleurs
+
+//dans Header 
+
+import Couleur from './Couleur';
+
+class Header extends Component {
+	constructor (props){
+		super(props);
+		this.state={cle:props.cle,
+		            deconnexion:"",
+		            login: props.login,
+					color:"off",
+					couleur:"",
+		};
+		this.onSubmit = this.onSubmit.bind(this);
+		this.couleur = React.createRef();//
+		this.changeColor = this.changeColor.bind(this);
+	}
+	
+	changeColor(e){
+		e.preventDefault();
+	   alert('changement de couleur');
+	   this.setState({
+		  color:"on",
+		});
+		
+	}
+render(){
+	return (
+		<form onSubmit={this.changeColor}>
+				    <button >couleur</button>
+		</form>
+		{this.state.color === "on" ? <Couleur symbol/> : ""}
+	);
+}
+}
+
+
+//dans Couleur.js
+
+import React, { Component } from 'react';
+import Login from './Login';
+import PagePrincipale from './PagePrincipale';
+import Profil from './Profil';
+import SignUp from './SignUp';
+import Header from './Header';
+
+import axios from 'axios';
+
+export default class Couleur  extends Component {
+	constructor(props) {
+		super(props);
+		this.state={
+			connection : "false",
+		    currentPage : "login",
+		    cle:'',
+		    login:'',
+			id:'',
+			couleur:'',
+			color:'',
+		}
+		this.couleur= React.createRef();
+		this.onChangeCouleur =this.onChangeCouleur.bind(this);
+		this.onSubmit =this.onSubmit.bind(this);
+	}
+	
+	onChangeCouleur(e) {
+        this.setState({
+            couleur: e.target.value
+        });
+    }
+	reponse_couleur(reponse){
+		if(reponse.data["status"]=="error"){
+			this.state({status:"error"});
+		}else{
+			this.state={status:""};
+			this.state.setState({
+				color: reponse.data.color,
+				code: reponse.data.code,
+				message: reponse.data.message,
+				});
+		}
+	}
+	
+	onSubmit(e) {
+        e.preventDefault();
+		const couleur = this.couleur.current.value;
+		axios.get(`http://localhost:8080/THEPROJECT2/Couleurs`+"?couleur="+couleur)
+		.then(reponse =>  this.reponse_couleur(reponse));
+    }
+	
+	render(){
+	return (<div>
+				<form onSubmit={this.onSubmit}>
+				<span>
+				<label>couleur</label>
+				</span>
+				<input type="text" ref={this.couleur} name="login" value={this.state.couleur} 
+				onChange={this.onChangeCouleur}/>
+				{this.state.color ? }	
+					///on mofifie la couleur de la page en fonction de this.state.color 
+					//style{{"color":this.state.color}}
+				</form>
+	
+	Couleur</div>);	
+	}
+}
+
+
