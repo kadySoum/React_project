@@ -30,7 +30,7 @@ export default class App extends Component {
 		     id: id,
 		})
 		
-		if(this.state.currentPage==="pagePrincipale"){ // si la page courante est la page principale (avec les postes...)
+		if(this.state.currentPage==="pagePrincipale"){ // si la page courante est la page principale (avec les posts...)
 			this.setState({
 			    connection :"true", //utilisateur est connecte
 			    currentPage : "profil" // on peut acceder a la page de profil 
@@ -78,6 +78,7 @@ export default class App extends Component {
 	}
 
 	render() {
+		//si l'utilisateur n'est pas connecte et que la page courante est la page de profil alors on l'affiche 
 		if(this.state.connection==="false" && this.state.currentPage==="login"){
 		    return(<div><Login connect={this.getConnected} signUpprops={this.signUp} connection ={this.state.connection} currentPage ={this.state.currentPage} /></div>);
 		}
