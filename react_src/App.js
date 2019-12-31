@@ -10,29 +10,30 @@ export default class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state={
-			connection : "false",
-		    currentPage : "login",
-		    cle:'',
+		    connection : "false", //utilisateur non connecte
+		    currentPage : "login", //la page courante
+		    cle:'', //cle de connection dans la table Session
 		    login:'',
-			id:'',
+		    id:'', //id de l'utilisateur
 		}
-		this.getConnected =  this.getConnected.bind(this);
+		this.getConnected =  this.getConnected.bind(this); //
 		this.setLogout = this.setLogout.bind(this);
 		this.signUp = this.signUp.bind(this);
 		this.getLog= this.getLog.bind(this);
 	}
 
 	getConnected(cle,login,id) {
+		//on met l'etat a jours
 		this.setState({
 		     cle: cle,
 		     login:login,
-			 id: id,
+		     id: id,
 		})
 		
-		if(this.state.currentPage==="pagePrincipale"){
+		if(this.state.currentPage==="pagePrincipale"){ // si la page courante est la page principale (avec les postes...)
 			this.setState({
-			    connection :"true",
-			    currentPage : "profil"
+			    connection :"true", //utilisateur est connecte
+			    currentPage : "profil" // on peut acceder a la page de profil 
 		    })
 		 }else{
 			if(this.state.currentPage==="profil"){
@@ -47,17 +48,19 @@ export default class App extends Component {
 			    })
 	        }
 	    }
-		alert("cle App"+this.state.cle);
+		alert("cle App"+this.state.cle); 
 	}
-
-	setLogout() {
+	
+	//pour deconnecter un utilisateur 
+	setLogout() { 
 	   this.setState({
-			connection :"false",
-			currentPage : "login",
-			cle:"",
+			connection :"false", //met l'instance a false 
+			currentPage : "login", // on va sur la page de login 
+			cle:"", //on reinitialise la cle
 	    })
 	}
 	
+	//pour enregistrer un nouvel utilisateur
 	signUp(){
 		this.setState({
 			connection :"false",
