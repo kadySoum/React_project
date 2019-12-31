@@ -8,23 +8,24 @@ class Centre extends Component{
 	constructor(props){
 		super(props);
 		this.state={value:"",
-					text: '', 
-					inputText: '',
-					mode: '',
-					posts:[] ,
-					cle : props.cle,
-					login: props.login,
-					curre: props.currentPageProps,
-					poster:'', };
+			    text: '', 
+			    inputText: '',
+			    mode: '',
+		            posts:[] ,
+			    cle : props.cle,
+			    login: props.login,
+			    curre: props.currentPageProps,
+			    poster:'', 
+	        };
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSave = this.handleSave.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleAddTodoItem = this.handleAddTodoItem.bind(this);
-		}
+	}
 	
 	handleSubmit(event) {
 		alert('Le message suivant va d\'etre poster :' + this.state.text);
-		 event.preventDefault();
+		event.preventDefault();
 		this.handleAddTodoItem()
 	}
 	
@@ -35,7 +36,7 @@ class Centre extends Component{
 		this.setState({text: this.state.inputText, mode:'not'});
 	}
 	handleStop(){
-			this.setState({mode:'not'});
+		this.setState({mode:'not'});
 	}
 	
 	/*handleAddTodoItem() {
@@ -59,6 +60,7 @@ class Centre extends Component{
 			}
 			console.log("id profil componentDidMoount:"+this.state.poster);
 	}
+	//ajouter un 
 	handleAddTodoItem() {
 		this.state.posts.push(this.state.text)
 			this.setState(
@@ -73,7 +75,7 @@ class Centre extends Component{
 	render () {
 	 let { posts } = this.state;
 	 alert("cle Centre"+this.state.cle);
-      return (		
+      	 return (		
 	<div>	
 		<div className="centre">
             <div className="publier">
